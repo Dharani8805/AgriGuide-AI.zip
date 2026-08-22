@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriGuide AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="header">
+            <div class="logo">🌱</div>
+            <div>
+                <h1>AgriGuide AI</h1>
+                <p>Your smart agriculture information assistant</p>
+            </div>
+        </header>
+
+        <section id="chatMessages" class="chat-messages" aria-live="polite">
+            <div class="message ai-message">
+                <div class="avatar">🌱</div>
+                <div class="bubble">
+                    <p>Hello! I'm AgriGuide AI. Ask me about crops, soil, irrigation,
+                    fertilizers, pests, harvesting, or sustainable farming.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="suggestions" aria-label="Suggested questions">
+            <button type="button" class="suggestion">
+                How often should I water my crops?
+            </button>
+            <button type="button" class="suggestion">
+                How can I improve my soil?
+            </button>
+            <button type="button" class="suggestion">
+                How can I manage common crop pests?
+            </button>
+        </section>
+
+        <form id="chatForm" class="input-area">
+            <label for="messageInput" class="sr-only">Your agriculture question</label>
+            <textarea
+                id="messageInput"
+                rows="1"
+                maxlength="4000"
+                placeholder="Ask an agriculture question..."
+                autocomplete="off"
+                required
+            ></textarea>
+            <button id="sendButton" type="submit">Send</button>
+        </form>
+
+        <footer>
+            Agriculture information is general guidance. For serious crop problems,
+            contact a qualified local agriculture professional.
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
